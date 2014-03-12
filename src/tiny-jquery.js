@@ -4,13 +4,11 @@
  */
 var $$ = function(element, context){
     if(this instanceof $$){
-        var elements = null;
-
-        if(context){
-            elements = context.querySelectorAll(element);
-        }else{
-            elements = document.querySelectorAll(element);
+        if(!context){
+            context = document;
         }
+
+        var elements = context.querySelectorAll(element);
 
         this.length = elements.length;
 
